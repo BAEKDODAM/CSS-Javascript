@@ -14,7 +14,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <button id="btn1">Click</button>
+    <button id="btn1" class="click1">Click</button>
+    <button id="btn2" class="hover1"><span>Hover</span></button>
+    <button id="btn2" class="hover2"><span>Hover</span></button>
 
     <script>
         const btn = document.getElementById('btn1')
@@ -22,10 +24,10 @@
             // 버튼의 왼쪽여백과 가로길이, 세로 여백과 세로 길이
             const { x, y, width, height} = btn.getBoundingClientRect()
 
-            // 원 반지름 구하기
+            // 원 반지름 구하기(피타고라스의 정리 이용)
             const radius = Math.sqrt(width * width + height * height)
 
-            // css에 프로퍼티로써 반지름 데이터를 동적으로 전달
+            // css에 프로퍼티로써 지름 데이터를 동적으로 전달
             btn.style.setProperty('--diameter', radius * 2 + 'px')
 
             // 원의 중앙이 클릭하는 위치에 오도록 left와 top 구함

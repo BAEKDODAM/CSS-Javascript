@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>site intro effect</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="ex1" data-text="glitch and noise effect">glitch and noise effect</div>
+    <h1 class="ex2">어쩌구</h1>
+    <script>
+
+        function glitch(element) {
+            let count = 0
+            setInterval(() => {  // random 값을 실시간으로 100ms마다 css에 전달하기 위해 선언함
+                // element
+                const skew = Math.random() * 20 - 10// 각도 변수 -10~10 사이 랜덤 값
+                // element::before
+                const top1 = Math.random() * 100
+                const btm1 = Math.random() * 100
+                // element::after
+                const top2 = Math.random() * 100
+                const btm2 = Math.random() * 100
+
+                // setproperty를 통해 css로 넘겨줌
+                element.style.setProperty('--skew', `${skew}deg`)
+                element.style.setProperty('--t1',`${top1}%`)
+                element.style.setProperty('--b1',`${btm1}%`)
+                element.style.setProperty('--t2',`${top2}%`)
+                element.style.setProperty('--b2',`${btm2}%`)
+                element.style.setProperty('--scale', `1`) // 글자 크기
+
+                count++
+
+                if (count % 15 === 0) {
+                    const bigSkew = Math.random() * 180 - 90 // 큰 각도 변수 -90~90 사이 랜덤 값
+                    element.style.setProperty('--skew', `${bigSkew}deg`)
+                }
+
+                if (count % 30 === 0) {
+                    const bigScale = 1 + Math.random() / 2
+                    element.style.setProperty('--scale', `${bigScale}`)
+                }
+            }, 100)
+        }
+        function gl(element) {
+            const top1 = Math.random() * 100
+            const btm1 = Math.random() * 100
+        }
+
+        const ex1 = document.querySelector('.ex1')
+        const ex2 = document.querySelector('.ex2')
+        glitch(ex1)
+    </script>
+</body>
+</html>

@@ -33,6 +33,5 @@ body {
     left: -5px;
     text-shadow: -2px 2px #cc2a1f;
     clip-path: inset(var(--t2) 0 var(--b2) 0);
-
     /*clip-path: polygon(0 var(--t2), 100% var(--t2), 100% var(--b2), 0 var(--b2));*/
 }

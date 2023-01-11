@@ -1,6 +1,6 @@
 # site intro effect
 
-## glich effect
+## glitch effect
 
 효과를 원하는 제목 위에 가상요소 ::before와 ::after을 만든 후
 pointion: absolute;를 이용해 제목 위에 띄워준다

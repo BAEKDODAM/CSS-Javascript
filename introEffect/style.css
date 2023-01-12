@@ -2,19 +2,35 @@ html,
 body {
     background-color: #1a1a1a;
     width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: "Orbitron", sans-serif;
+}
+
+.examples {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+
 }
 .ex1 {
-    font-size: 5rem;
     color: #f1f1f1;
     position: relative;
     transform: skew(var(--skew)); /*부모 통째로 기울이기 위해서*/
     transform: skew(var(--skew)) scale(var(--scale));
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    margin-bottom: 100px;
+    /*margin: auto;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;*/
 }
 .ex1::before, .ex1::after {
     content: attr(data-text);
@@ -34,4 +50,82 @@ body {
     text-shadow: -2px 2px #cc2a1f;
     clip-path: inset(var(--t2) 0 var(--b2) 0);
     /*clip-path: polygon(0 var(--t2), 100% var(--t2), 100% var(--b2), 0 var(--b2));*/
+}
+
+/*-------------------------------*/
+
+.ex2 {
+    display: inline-flex;
+    color: white;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.ex2 .dynamic-text {
+    color:#fc6d6d !important;
+    height: 106px;
+    margin-left: 15px;
+    overflow: hidden;
+}
+.dynamic-text li{
+    list-style: none;
+    padding-bottom: 30px;
+    position: relative;
+    top: 0;
+    animation:  slide 6s steps(4) infinite;
+
+}
+.ex2 .dynamic-text li span {
+    position: relative;
+}
+.dynamic-text li span::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid #fc6d6d;
+    animation: typing 1.5s steps(10) infinite;
+    background-color: #1a1a1a;
+    margin-left: 10px;
+}
+
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 50px;
+    }
+}
+@keyframes slide {
+    100% {
+        top: -440px;
+    }
+}
+
+/*----------------------------------------*/
+
+@keyframes blinkCursor {
+    0%, 75%{
+        opacity: 1;
+    }
+    76%,100% {
+        opacity: 0;
+    }
+}
+@keyframes typing2 {
+    0%, 90%, 100% {
+        width: 0
+    }
+    30%, 60% {
+        width:  500px;
+    }
+}
+.typeIt {
+    padding: auto;
+    color: white;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }

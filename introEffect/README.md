@@ -64,3 +64,9 @@ clip-path: polygon(0 top1, 100 top1, 100 bottom1, 0 bottom1);
 clip-path: inset(top1 0 bottom1 0)
 ```
 <img src='img2.png' width='500xp'/>
+
+
+# typing animation
+## typeit 라이브러리
+https://www.typeitjs.com/
+

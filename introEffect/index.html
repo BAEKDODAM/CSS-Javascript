@@ -5,11 +5,45 @@
     <title>site intro effect</title>
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+    <style>
+        :root {
+            --ti-cursor-margin-left: 0.1rem;
+            --ti-cursor-color: dodgerblue;
+        }
+    </style>
 </head>
 <body>
-    <div class="ex1" data-text="glitch and noise effect">glitch and noise effect</div>
-    <h1 class="ex2">어쩌구</h1>
+    <div class="examples">
+        <div class="ex1" data-text="glitch and noise effect">glitch and noise effect</div>
+        <div class="ex2" data-text="glitch and noise effect">
+            <div class="static-text">I love </div>
+            <ul class="dynamic-text">
+                <li><span>programming</span></li>
+                <li><span>Javascript</span></li>
+                <li><span>Python</span></li>
+                <li><span>Java</span></li>
+            </ul>
+        </div>
+        <div class="typeIt"></div>
+    </div>
     <script>
+        document.addEventListener('DOMContentLoaded', () =>{
+            new TypeIt(".typeIt", {
+                strings: ["I love "],
+                speed: 150, 
+                waitUntilVisible: true, 
+                loop: true,
+                
+            })
+            .type("Programming", {delay: 1000})
+            .delete(11, {speed: 100})
+            .type("Javascript", {delay: 1000})
+            .delete(6, {delay: 1000})
+            .delete(4)
+            .type("Python")
+            .go();
+        })
 
         function glitch(element) {
             let count = 0
@@ -48,9 +82,25 @@
             const top1 = Math.random() * 100
             const btm1 = Math.random() * 100
         }
+/*
+        function changeText(element) {
+            ex2List = ["programming","javascript", "python", "java", "html & css"]
 
+            setTimeout(()=>{
+                ex2txt.textContent = "programming"
+            }, 1000)
+            setTimeout(()=>{
+                ex2txt.textContent = "javascript"
+            }, 2000)
+            setTimeout(()=>{
+                ex2txt.textContent = "python"
+            }, 3000)
+            
+        }*/
         const ex1 = document.querySelector('.ex1')
         const ex2 = document.querySelector('.ex2')
+        const typeIt = document.querySelector('.typeIt')
+        const ex3 = document.querySelector('.ex3')
         glitch(ex1)
     </script>
 </body>

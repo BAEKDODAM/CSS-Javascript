@@ -24,4 +24,4 @@ ratio = (b+c-a)/d (%)
 
 stroke-dashoffset: path 총 길이 - (path 총 길이 * ratio)
 
-<img src="3.png" width='500px'>
+<img src="3.png" width='650px'>

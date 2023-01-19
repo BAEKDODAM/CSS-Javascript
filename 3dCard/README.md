@@ -2,10 +2,12 @@
 
 ## getBoundingClientRect()
 element의 left/x, top/y, bottom, right, width, heigh 값을 반환하는 함수
+
 <img src="getBoundingClientRect.png" width="500px"/>
 
 ## mousmove(e)
 카드 위 마우스 좌표 실시간으로 적용하기 위한 함수
+
 <img src="clientXclientY.png" width="500px">
 
 ## rotate3d

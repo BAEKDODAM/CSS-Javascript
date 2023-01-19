@@ -9,7 +9,7 @@ centerY = e.pageY - offsetTop - offsetHeight/2
 
 d = `Math.sqrt(centerX**2 + centerY**2)`
 
-<img src="img1.png" width= 400px>
+<img src="img1.png" width= 700px>
 
 ### translate3d
 translate3d를 사용하여 element가 마우스를 따라올 수 있도록 한다
